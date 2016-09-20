@@ -467,8 +467,35 @@ limitations under the License.
                     cc.factorie.variable
                   </Export-Package>
                 </instructions>
+                  <archive>
+                      <manifest>
+                          <addClasspath>true</addClasspath>
+                          <mainClass>cc.factorie.tutorial.CodeDeobfuscationDemo</mainClass>
+                      </manifest>
+                  </archive>
               </configuration>
             </plugin>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-jar-plugin</artifactId>
+                  <executions>
+                      <execution>
+                          <id>make-manifest</id>
+                          <phase>package</phase>
+                          <goals>
+                              <goal>jar</goal>
+                          </goals>
+                      </execution>
+                  </executions>
+                  <configuration>
+                      <archive>
+                          <manifest>
+                              <addClasspath>true</addClasspath>
+                              <mainClass>cc.factorie.tutorial.CodeDeobfuscationDemo</mainClass>
+                          </manifest>
+                      </archive>
+                  </configuration>
+              </plugin>
           </plugins>
         </build>
       </profile>
@@ -479,6 +506,27 @@ limitations under the License.
         </properties>
         <build>
           <plugins>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-jar-plugin</artifactId>
+                  <executions>
+                      <execution>
+                          <id>make-manifest</id>
+                          <phase>package</phase>
+                          <goals>
+                              <goal>jar</goal>
+                          </goals>
+                      </execution>
+                  </executions>
+                  <configuration>
+                      <archive>
+                          <manifest>
+                              <addClasspath>true</addClasspath>
+                              <mainClass>cc.factorie.tutorial.CodeDeobfuscationDemo</mainClass>
+                          </manifest>
+                      </archive>
+                  </configuration>
+              </plugin>
             <!-- Assembles the jar and other release formats (tarball, etc.). -->
             <plugin>
               <artifactId>maven-assembly-plugin</artifactId>
@@ -497,6 +545,12 @@ limitations under the License.
                 <descriptorRefs>
                   <descriptorRef>jar-with-dependencies</descriptorRef>
                 </descriptorRefs>
+                  <archive>
+                      <manifest>
+                          <addClasspath>true</addClasspath>
+                          <mainClass>cc.factorie.tutorial.CodeDeobfuscationDemo</mainClass>
+                      </manifest>
+                  </archive>
               </configuration>
             </plugin>
           </plugins>
@@ -528,6 +582,27 @@ limitations under the License.
         </dependencies>
         <build>
           <plugins>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-jar-plugin</artifactId>
+                  <executions>
+                      <execution>
+                          <id>make-manifest</id>
+                          <phase>package</phase>
+                          <goals>
+                              <goal>jar</goal>
+                          </goals>
+                      </execution>
+                  </executions>
+                  <configuration>
+                      <archive>
+                          <manifest>
+                              <addClasspath>true</addClasspath>
+                              <mainClass>cc.factorie.tutorial.CodeDeobfuscationDemo</mainClass>
+                          </manifest>
+                      </archive>
+                  </configuration>
+              </plugin>
             <!-- Assembles the jar and other release formats (tarball, etc.). -->
             <plugin>
               <artifactId>maven-assembly-plugin</artifactId>
@@ -546,6 +621,12 @@ limitations under the License.
                 <descriptors>
                   <descriptor>src/main/assembly/nlp-jar-with-dependencies.xml</descriptor>
                 </descriptors>
+                  <archive>
+                      <manifest>
+                          <addClasspath>true</addClasspath>
+                          <mainClass>cc.factorie.tutorial.CodeDeobfuscationDemo</mainClass>
+                      </manifest>
+                  </archive>
               </configuration>
             </plugin>
           </plugins>
@@ -615,6 +696,7 @@ limitations under the License.
               </plugin>
 
 
+
               <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -670,7 +752,10 @@ limitations under the License.
                   <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
               </plugin>
+
+
             </plugins>
+
         </build>
       </profile>
     </profiles>
